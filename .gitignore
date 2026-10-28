@@ -1,0 +1,19 @@
+# Dependencias y builds
+node_modules/
+.next/
+out/
+dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Variables de entorno (se mantiene el ejemplo)
+.env
+.env.local
+.env*.local
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/

@@ -1,0 +1,54 @@
+.main { max-width: 760px; margin: 0 auto; padding: 56px 20px 80px; }
+.titulo { font-size: 2rem; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 6px; }
+.intro { color: var(--tinta-suave); margin: 0 0 32px; max-width: 60ch; }
+
+/* La cama del escáner: el único elemento con personalidad */
+.cama {
+  position: relative; overflow: hidden;
+  display: grid; place-items: center; text-align: center;
+  min-height: 220px; padding: 32px 24px;
+  border: 1.5px dashed var(--borde); border-radius: 6px;
+  background: var(--hoja); cursor: pointer;
+  transition: border-color .15s;
+}
+.cama:hover, .cama.arrastrando { border-color: var(--cobalto); border-style: solid; }
+.cama input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.camaTexto { font-weight: 500; margin: 0; }
+.camaAyuda { color: var(--tinta-suave); font-size: .875rem; margin: 4px 0 0; }
+.archivo { font-weight: 500; margin: 0; word-break: break-all; }
+
+/* Barra de luz que recorre la hoja mientras se procesa */
+.escaneando::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 3px;
+  background: var(--cobalto); box-shadow: 0 0 18px 6px color-mix(in srgb, var(--cobalto) 35%, transparent);
+  animation: barrido 1.6s ease-in-out infinite alternate;
+}
+@keyframes barrido { from { top: 0; } to { top: calc(100% - 3px); } }
+@media (prefers-reduced-motion: reduce) { .escaneando::after { animation: none; top: 50%; } }
+
+.opciones { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin: 20px 0; }
+.opciones label { display: flex; gap: 8px; align-items: center; font-size: .9375rem; }
+.opciones select { font: inherit; padding: 6px 8px; border: 1px solid var(--borde); border-radius: 4px; background: var(--hoja); color: var(--tinta); }
+
+.boton {
+  font: inherit; font-weight: 500; padding: 10px 18px; border-radius: 4px; cursor: pointer;
+  border: 1px solid var(--cobalto); background: var(--cobalto); color: #fff;
+}
+.boton:disabled { opacity: .45; cursor: not-allowed; }
+.secundario { background: transparent; color: var(--cobalto); }
+
+.error { color: var(--error); margin: 12px 0 0; }
+
+.resultado { margin-top: 40px; }
+.cabecera { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+.cabecera h2 { font-size: 1.25rem; font-weight: 600; margin: 0; }
+.meta { color: var(--tinta-suave); font-size: .875rem; }
+.paginas { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.pagina { font: inherit; font-size: .875rem; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--borde); background: transparent; color: var(--tinta); cursor: pointer; }
+.pagina[aria-current="true"] { border-color: var(--cobalto); color: var(--cobalto); font-weight: 500; }
+.texto {
+  width: 100%; min-height: 380px; padding: 20px; resize: vertical;
+  font-family: var(--font-mono), ui-monospace, monospace; font-size: .875rem; line-height: 1.6;
+  background: var(--hoja); color: var(--tinta); border: 1px solid var(--borde); border-radius: 6px;
+}
+.descargas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
