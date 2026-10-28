@@ -92,7 +92,8 @@ export default function Page() {
     <main className={s.main}>
       <h1 className={s.titulo}>Extraer texto de documentos</h1>
       <p className={s.intro}>
-        Sube una foto o un PDF escaneado. Revisa el texto, corrige lo que haga falta y descárgalo como .txt o .docx.
+        Sube una foto o un PDF escaneado. Revisa el texto, corrige lo que haga falta y descárgalo como .txt o .docx. 
+        Hola Vicky, aquí probando.
       </p>
 
       <label
