@@ -6,8 +6,8 @@ const sans = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], 
 const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Folio · Extraer texto de documentos",
-  description: "Sube una imagen o PDF escaneado y descarga el texto en .txt o .docx",
+  title: "Folio · Herramientas para documentos y PDF",
+  description: "Extrae texto de escaneos, une, separa, comprime, numera y protege tus PDF.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

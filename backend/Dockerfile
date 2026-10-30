@@ -1,8 +1,8 @@
 FROM python:3.12-slim
 
-# Tesseract (con español e inglés) y Poppler para rasterizar PDFs
+# Tesseract (con español e inglés), Poppler para rasterizar PDFs y Ghostscript para comprimirlos
 RUN apt-get update && apt-get install -y --no-install-recommends \
-      tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng poppler-utils \
+      tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng poppler-utils ghostscript \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app

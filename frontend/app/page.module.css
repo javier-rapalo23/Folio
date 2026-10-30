@@ -52,3 +52,27 @@
   background: var(--hoja); color: var(--tinta); border: 1px solid var(--borde); border-radius: 6px;
 }
 .descargas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+
+/* Herramientas PDF */
+.menu { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 40px; }
+.opciones input:not([type="checkbox"]) {
+  font: inherit; width: 14em; padding: 6px 8px;
+  border: 1px solid var(--borde); border-radius: 4px; background: var(--hoja); color: var(--tinta);
+}
+.opciones input[type="number"] { width: 5em; }
+.separado { margin-top: 20px; }
+.lista { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 6px; }
+.lista li {
+  display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+  background: var(--hoja); border: 1px solid var(--borde); border-radius: 4px;
+}
+.nombreArchivo { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.icono {
+  font: inherit; width: 30px; height: 30px; padding: 0; cursor: pointer;
+  border: 1px solid var(--borde); border-radius: 4px; background: transparent; color: var(--tinta);
+}
+.icono:disabled { opacity: .35; cursor: not-allowed; }
+.listo {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 20px;
+  margin-top: 32px; padding: 20px; background: var(--hoja); border: 1px solid var(--borde); border-radius: 6px;
+}
